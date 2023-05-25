@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\V1\Auth;
+use App\Http\Controllers\Api\V1\VehicleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,8 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::put('profile', [Auth\ProfileController::class, 'update']);
     Route::put('password', Auth\PasswordUpdateController::class);
     Route::get('auth/logout', Auth\LogoutController::class);
+
+    Route::apiResource('vehicles', VehicleController::class);
     
 });
 
