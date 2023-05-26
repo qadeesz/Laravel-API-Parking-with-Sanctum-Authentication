@@ -19,3 +19,6 @@ yarn-error.log
 /.vscode
 
 todo.MD
+
+/public/docs/
+.scribe
