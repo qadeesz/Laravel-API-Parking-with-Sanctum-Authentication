@@ -21,12 +21,15 @@ class PasswordUpdateController extends Controller
             'password'         => ['required', 'confirmed', Password::defaults()],
         ]);
 
-        $request->auth()->user()->update([
-            'password' => Hash::make($request->input('password')),
+        auth()->user()->update([	
+            'password' => Hash::make($request->input('password')),	
         ]);
+        // $request->auth()->user()->update([
+        //     'password' => Hash::make($request->input('password')),
+        // ]);
 
         return response()->json([
-            "message" => "Ypur password has been updated successfully",
+            "message" => "Your password has been updated.",
         ], Response::HTTP_ACCEPTED);
 
     }
